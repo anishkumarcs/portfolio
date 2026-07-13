@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Regex Web Form Validator</title>
+</head>
+
+<body>
+
+    <h2>Simple Registration Form</h2>
+
+    <form id="form">
+
+        Name:<br>
+        <input type="text" id="name"><br><br>
+
+        Email:<br>
+        <input type="text" id="email"><br><br>
+
+        Phone:<br>
+        <input type="text" id="phone"><br><br>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+
+    </form>
+
+    <h3 id="message">Web Form Validator</h3>
+
+    <script>
+        // -----------------------------
+        // CLIENT-SIDE FORM VALIDATION
+        // USING REGULAR EXPRESSIONS
+        // -----------------------------
+
+        function validateForm() {
+
+            // STEP 1: Read values from form
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            let message = document.getElementById("message");
+
+            // STEP 2: Define validation rules (REGEX)
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phonePattern = /^[0-9]{10}$/;
+            // - phone regex explained:
+            //
+            // - Email regex explained:
+            //   - ^ asserts start of string
+            //   - [^\s@]+ matches one or more characters that are not whitespace or
+            // - $ indicates end of string
+
+            // STEP 3: Validate name
+            if (name == "") {
+                message.innerHTML = "Name is required.";
+                return;
+            }
+
+            // STEP 4: Validate email using regex
+            if (!emailPattern.test(email)) {
+                message.innerHTML = "Enter a valid email (example: user@gmail.com).";
+                return;
+            }
+
+            // STEP 5: Validate phone using regex
+            if (!phonePattern.test(phone)) {
+                message.innerHTML = "Phone must be exactly 10 digits.";
+                return;
+            }
+
+            // STEP 6: Success case
+            message.innerHTML = "Form is valid. Ready to submit (no backend).";
+        }
+    </script>
+
+</body>
+
+</html>
