@@ -100,3 +100,59 @@ select {
     --transition-normal: 300ms ease;
 
 }
+
+/* ==========================================
+   3. Global Styles
+   ========================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+
+    color: var(--color-text);
+    background-color: var(--color-background);
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+ul,
+ol {
+    padding-left: var(--space-lg);
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
