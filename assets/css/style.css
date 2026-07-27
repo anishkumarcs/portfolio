@@ -156,3 +156,26 @@ select:focus-visible {
     outline: 3px solid var(--color-secondary);
     outline-offset: 2px;
 }
+
+/* ==========================================
+   4. Layout
+   ========================================== */
+
+.container {
+    width: min(100% - 2rem, 75rem);
+    margin-inline: auto;
+}
+
+section {
+    padding-block: var(--space-xl);
+    scroll-margin-top: 5rem;
+}
+
+figure {
+    margin: 0;
+}
+
+iframe {
+    max-width: 100%;
+    border: 0;
+}
