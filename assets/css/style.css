@@ -1,0 +1,43 @@
+/* ==========================================
+   1. Minimal CSS Reset
+   ========================================== */
+
+/* Use a predictable box model for all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove the browser's default page margin */
+body {
+    margin: 0;
+}
+
+/* Make images responsive by default */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure form controls use the same font as the page */
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
+    }
+}
