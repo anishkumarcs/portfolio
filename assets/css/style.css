@@ -223,3 +223,52 @@ header img {
     max-width: 60ch;
     color: var(--color-text-muted);
 }
+
+/* ==========================================
+   6. Navigation
+   ========================================== */
+
+nav {
+    margin-inline-start: auto;
+}
+
+.nav-list {
+    display: flex;
+    gap: var(--space-lg);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.nav-list a {
+    display: block;
+
+    padding: var(--space-sm) var(--space-md);
+
+    color: var(--color-text);
+
+    font-weight: var(--font-weight-medium);
+
+    border-radius: var(--border-radius);
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.nav-list a:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+}
+
+.nav-list a:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 3px;
+}
+
+.nav-list a.active {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
